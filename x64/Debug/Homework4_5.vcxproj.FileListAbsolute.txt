@@ -1,0 +1,7 @@
+C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\Homework4_5\x64\Debug\Homework4_5.exe
+C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\Homework4_5\x64\Debug\Homework4_5.vcxproj.CopyComplete
+C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\Homework4_5\x64\Debug\assimp-vc143-mtd.dll
+C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\Homework4_5\x64\Debug\poly2tri.dll
+C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\Homework4_5\x64\Debug\minizip.dll
+C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\Homework4_5\x64\Debug\zlibd1.dll
+C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\Homework4_5\x64\Debug\pugixml.dll
