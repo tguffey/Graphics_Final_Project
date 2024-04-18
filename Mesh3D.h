@@ -1,63 +1,69 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <glm/ext.hpp>
+#include <glm/glm.hpp>
+#include <glad/glad.h>
+#include "ShaderProgram.h"
+#include "Texture.h"
 
-/**
- * @brief One vertex in 3D space.
-*/
 struct Vertex3D {
 	float_t x;
 	float_t y;
 	float_t z;
 
-	Vertex3D(float_t a, float_t b, float_t c) : x(a), y(b), z(c) {}
+	float_t nx;
+	float_t ny;
+	float_t nz;
+
+	float_t u;
+	float_t v;
+
+	Vertex3D(float_t px, float_t py, float_t pz, float_t normX, float_t normY, float_t normZ,
+		float_t texU, float_t texV) :
+		x(px), y(py), z(pz), nx(normX), ny(normY), nz(normZ), u(texU), v(texV) {}
 };
 
 /**
- * @brief A collection of vertices and triangular faces represnting a 3D surface.
-*/
+ * @brief Represents a mesh whose vertices have positions, normal vectors, and texture coordinates;
+ * as well as a list of Textures to bind when rendering the mesh.
+ */
 class Mesh3D {
 private:
-	std::vector<Vertex3D> m_vertices;
-	std::vector<size_t> m_faces;
-	sf::Color m_color;
-
-	static sf::Vector2u clipToScreen(const sf::View& viewport, const glm::vec4& clip);
-	static bool inBounds(float a);
-	static bool inBounds(const glm::vec4& clip);
+	uint32_t m_vao;
+	std::vector<Texture> m_textures;
+	size_t m_vertexCount;
+	size_t m_faceCount;
 
 public:
 	Mesh3D() = delete;
 
+	
 	/**
-	 * @brief Constructs a Mesh3D by taking ownership of existing vectors of vertices and faces.
-	 * @param color the color to draw the mesh.
+	 * @brief Construcst a Mesh3D using existing vectors of vertices and faces.
 	*/
-	Mesh3D(std::vector<Vertex3D>&& vertices, std::vector<size_t>&& faces, sf::Color color);
+	Mesh3D(std::vector<Vertex3D>&& vertices, std::vector<uint32_t>&& faces, 
+		Texture texture);
 
-	/**
-	 * @brief Construcst a Mesh3D by copying existing vectors of vertices and faces.
-	 * @param color the color to draw the mesh.
-	*/
-	Mesh3D(const std::vector<Vertex3D>& vertices, const std::vector<size_t>& faces, sf::Color color);
+	Mesh3D(std::vector<Vertex3D>&& vertices, std::vector<uint32_t>&& faces,
+		std::vector<Texture>&& textures);
+
+	void addTexture(Texture texture);
 
 	/**
 	 * @brief Constructs a 1x1 square centered at the origin in world space.
 	*/
-	static Mesh3D square(sf::Color color);
+	static Mesh3D square(const std::vector<Texture>& textures);
 	/**
 	 * @brief Constructs a 1x1x1 cube centered at the origin in world space.
 	*/
-	static Mesh3D cube(sf::Color color);
-
-	static Mesh3D house(sf::Color color);
+	static Mesh3D cube(Texture texture);
+	/**
+	 * @brief Constructs the upper-left half of the 1x1 square centered at the origin.
+	*/
+	static Mesh3D triangle(Texture texture);
 
 	/**
 	 * @brief Renders the mesh to the given context.
-	 * @param model the local->world model transformation matrix.
-	 * @param view the world->view camera matrix.
-	 * @param proj the view->clip projection matrix.
-	*/
-	void render(sf::RenderWindow& window, const glm::mat4& model, const glm::mat4& view, const glm::mat4& proj) const;
+	 */
+	void render(sf::RenderWindow& window, ShaderProgram& program) const;
 	
 };
