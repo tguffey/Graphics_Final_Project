@@ -1,4 +1,6 @@
 /.vs
+/.vcpkg
+/.x64
 
 Homework4_5.sln
 Homework4_5.vcxproj

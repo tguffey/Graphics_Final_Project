@@ -1,5 +1,4 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Homework4_5.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Animator.cpp
+﻿  Animator.cpp
   AssimpImport.cpp
 C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\449_Final_Project\AssimpImport.cpp(150,21): warning C4018: '<': signed/unsigned mismatch
 C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\449_Final_Project\AssimpImport.cpp(167,21): warning C4018: '<': signed/unsigned mismatch
@@ -75,6 +74,6 @@ sfml-system-s-d.lib(ClockImpl.obj) : warning LNK4099: PDB '' was not found with 
 sfml-system-s-d.lib(MutexImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(MutexImpl.obj)' or at ''; linking object as if no debug info
 sfml-system-s-d.lib(SleepImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(SleepImpl.obj)' or at ''; linking object as if no debug info
 sfml-system-s-d.lib(ThreadLocalImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(ThreadLocalImpl.obj)' or at ''; linking object as if no debug info
-  Homework4_5.vcxproj -> C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\449_Final_Project\x64\Debug\Final_Project.exe
+  Homework4_5.vcxproj -> C:\Users\senor\CSULB\Spring_2024\CECS_449\Projects\449_Final_Project\x64\Debug\Homework4_5.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
