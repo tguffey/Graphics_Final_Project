@@ -1,6 +1,25 @@
 /.vs
 /.vcpkg
 /.x64
+/x64
+/vs
+/vcpkg
+
+Graphics Final.sln
+"Graphics Final.sln"
+Graphics\ Final.sln
+
+Graphics Final.vcxproj
+"Graphics Final.vcxproj"
+Graphics\ Final.vcxproj
+
+Graphics Final.vcxproj.filters
+"Graphics Final.vcxproj.filters"
+Graphics\ Final.vcxproj.filters
+
+Graphics Final.vcxproj.user
+"Graphics Final.vcxproj.user"
+Graphics\ Final.vcxproj.user
 
 Homework4_5.sln
 Homework4_5.vcxproj
